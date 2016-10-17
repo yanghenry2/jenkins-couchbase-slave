@@ -1,7 +1,7 @@
 FROM java:8u45-jdk
 MAINTAINER Henry Yang <yanghenry2@gmail.com>
 
-ENV JENKINS_SWARM_VERSION 2.0
+ENV JENKINS_SWARM_VERSION 2.2
 ENV HOME /home/jenkins-slave
 
 # install netstat to allow connection health check with
@@ -9,7 +9,7 @@ ENV HOME /home/jenkins-slave
 RUN apt-get update && apt-get install -y net-tools && rm -rf /var/lib/apt/lists/*
 RUN useradd -c "Jenkins Slave user" -d $HOME -m jenkins-slave
 
-RUN curl --create-dirs -sSLo /usr/share/jenkins/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar http://maven.jenkins-ci.org/content/repositories/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar
+RUN curl --create-dirs -sSLo /usr/share/jenkins/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar
 RUN chmod 755 /usr/share/jenkins
 
 COPY jenkins-slave.sh /usr/local/bin/jenkins-slave.sh
