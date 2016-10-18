@@ -21,11 +21,8 @@ RUN unzip awscli-bundle.zip
 RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
 #Install CB 4.1.2MP1:
-#RUN apt-get install http://qalabs-artifactory.usccqa.qalabs.symantec.com/artifactory/simple/epmp-yum/rpms/couchbase-server-enterprise/4.1.2-MP1/couchbase-server-enterprise-4.1.2-MP1-centos6.x86_64.rpm
-#RUN curl -O http://packages.couchbase.com/releases/couchbase-release/couchbase-release-1.0-1-amd64.deb
-#RUN dpkg -i couchbase-release-1.0-1-amd64.deb
-#RUN apt-get install couchbase-server
-#RUN apt-get install http://packages.couchbase.com/releases/4.1.2/couchbase-server-enterprise_4.1.2-ubuntu12.04_amd64.deb
+RUN curl -O http://packages.couchbase.com/releases/4.1.2/couchbase-server-enterprise_4.1.2-ubuntu12.04_amd64.deb
+RUN dpkg -i couchbase-server-enterprise_4.1.2-ubuntu12.04_amd64.deb
 
 #USER jenkins-slave
 USER root
