@@ -13,6 +13,7 @@ if [[ $# -lt 1 ]] || [[ "$1" == "-"* ]]; then
 
   echo Running java $JAVA_OPTS -jar $JAR -fsroot $HOME $PARAMS "$@"
   exec java $JAVA_OPTS -jar $JAR -fsroot $HOME $PARAMS "$@"
+  exec dpkg -i /tmp/couchbase.deb
 fi
 
 # As argument is not jenkins, assume user want to run his own process, for sample a `bash` shell to explore this image
