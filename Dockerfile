@@ -24,7 +24,7 @@ RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 #RUN curl -O http://packages.couchbase.com/releases/couchbase-release/couchbase-release-1.0-1-amd64.deb
 #RUN dpkg -i couchbase-release-1.0-1-amd64.deb
 #RUN apt-get install couchbase-server
-RUN apt-get install http://packages.couchbase.com/releases/4.1.2/couchbase-server-enterprise_4.1.2-ubuntu12.04_amd64.deb
+#RUN apt-get install http://packages.couchbase.com/releases/4.1.2/couchbase-server-enterprise_4.1.2-ubuntu12.04_amd64.deb
 
 #USER jenkins-slave
 USER root
